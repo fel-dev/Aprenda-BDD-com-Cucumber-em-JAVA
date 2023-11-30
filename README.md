@@ -27,6 +27,18 @@ Além disso, será necessário instalar o plugin do Cucumber no Eclipse Marketpl
 
 Após instalar o plugin do Cucumber, você estará pronto para começar a utilizar o BDD com Cucumber em Java no Eclipse.
 
+antes de fechar o project, colcar isso no `pom.xml`
+<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>1.2.5</version>
+    </dependency>
+</dependencies>
+```
 
 ## Público-alvo
 
