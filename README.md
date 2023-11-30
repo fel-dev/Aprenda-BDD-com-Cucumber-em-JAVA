@@ -15,6 +15,19 @@ Você deve ter um conhecimento básico de JAVA.
 
 Para seguir este tutorial, você precisará instalar o Java JDK e o Eclipse IDE for Java Developers.
 
+Além disso, será necessário instalar o plugin do Cucumber no Eclipse Marketplace. Você pode fazer isso seguindo os passos abaixo:
+
+1. Abra o Eclipse IDE.
+2. Vá para o menu "Help" e selecione "Eclipse Marketplace".
+3. Na caixa de pesquisa, digite "Cucumber" e pressione Enter.
+4. Localize o plugin "Cucumber Eclipse Plugin" e clique em "Go to Marketplace".
+5. Clique no botão "Install" para iniciar a instalação.
+6. Siga as instruções na tela para concluir a instalação.
+7. Reinicie o Eclipse após a instalação do plugin.
+
+Após instalar o plugin do Cucumber, você estará pronto para começar a utilizar o BDD com Cucumber em Java no Eclipse.
+
+
 ## Público-alvo
 
 - Testadores que estão cansados de ver os casos de testes ficarem desatualizados
