@@ -39,6 +39,7 @@ antes de fechar o project, colcar isso no `pom.xml`
     </dependency>
 </dependencies>
 ```
+**NOTA** Ver [#erro-de-import](#erro-de-import) para mais detalhes
 
 ## Público-alvo
 
@@ -85,6 +86,7 @@ fonte https://www.udemy.com/course/cucumber-java/learn/lecture/9923368#overview
 </dependency>
 ```
 **NOTA** Na vídeo aula, o professor usou a versão 1.2.5. Mas já vi que costuma dar erro na hora de executar o teste com essas configuração dele pois é meio legado... Em regra geral, tenta o 1.2.5 primeiro, se der erro, tenta a última versão.
+**NOTA²** A versão do JUnit não pode ser maior que a versão do Cucumber, se não dá erro na hora de executar o teste.
 
 ## Runner do JUnit
 
@@ -108,3 +110,49 @@ public class Runner {
 }
 ```
 
+# erro-de-import
+
+Vai dar erro [Esse erro só dá se a versão do JUnit for maior que a versão do Cucumber] porque o Eclipse não sabe onde está o `Cucumber.class`, ao importar o `Cucumber` com `Ctrl + Shift + O`
+
+> Solve¹: Já identifiquei o problema e já corrigir, só estava utilizando a versão do cucumber menor que a versão do junit, 
+
+Solved²: então a solução é essa, colcar substituir [as dependecias] lá no file `xml` do `pom`
+
+Segue o arquivo pom criado durante o curso...
+
+```xml
+    <project xmlns="http://maven.apache.org/POM/4.0.0"
+    	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    	<modelVersion>4.0.0</modelVersion>
+    	<groupId>br.ce.wcaquino</groupId>
+    	<artifactId>exercicios-curso-cucumber</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+     
+    	<dependencies>
+    		<dependency>
+    			<groupId>info.cukes</groupId>
+    			<artifactId>cucumber-java</artifactId>
+    			<version>1.2.5</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>info.cukes</groupId>
+    			<artifactId>cucumber-junit</artifactId>
+    			<version>1.2.5</version>
+    			<scope>test</scope>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.seleniumhq.selenium</groupId>
+    			<artifactId>selenium-java</artifactId>
+    			<version>3.11.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>commons-io</groupId>
+    			<artifactId>commons-io</artifactId>
+    			<version>2.6</version>
+    		</dependency>
+    	</dependencies>
+    </project>
+```
+
+##

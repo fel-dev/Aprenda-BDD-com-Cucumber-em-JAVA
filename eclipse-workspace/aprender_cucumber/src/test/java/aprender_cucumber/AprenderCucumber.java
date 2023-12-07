@@ -1,11 +1,10 @@
 package aprender_cucumber;
 
-import io.cucumber.java.pt.Dado;
-import io.cucumber.java.pt.Então;
-import io.cucumber.java.pt.Quando;
+import cucumber.api.java.pt.Dado;
+import cucumber.api.java.pt.Então;
+import cucumber.api.java.pt.Quando;
 
 //import io.cucumber.java.pt.*;
-
 
 public class AprenderCucumber {
 	@Dado("que crei o arquivo corretamente")
