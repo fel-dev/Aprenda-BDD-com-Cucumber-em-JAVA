@@ -63,3 +63,26 @@ Wagner Costa possui graduação em Ciências da Computação, Mestrado na área 
 
 fonte https://www.udemy.com/course/cucumber-java/learn/lecture/9923368#overview
 
+# 8. Integrando com JUnit
+
+### Colar o código xml do JUnit no `pom.xml`
+
+1. buscar por "cucumber" no [MVN Repository](https://mvnrepository.com/search?q=cucumber)
+2. [Cucumber JVM: JUnit](https://mvnrepository.com/artifact/info.cukes/cucumber-junit)
+3. Usar versão [1.2.5](https://mvnrepository.com/artifact/info.cukes/cucumber-junit/1.2.5)
+4. Copiar o código xml do JUnit e colar no `pom.xml` dentro da tag `<dependencies>`
+    - mas dentro de um novo container `<dependency>` (os nomes são parecidos, cuidar para não confundir)
+    - no final, usando o Eclipse, dá um `Ctrl + Shift + F` para formatar o código e não esquece de salvar o arquivo
+
+```xml
+<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+<dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>1.2.6</version>
+    <type>pom</type>
+    <scope>test</scope>
+</dependency>
+```
+**NOTA** Na vídeo aula, o professor usou a versão 1.2.5. Mas já vi que costuma dar erro na hora de executar o teste com essas configuração dele pois é meio legado... Em regra geral, tenta o 1.2.5 primeiro, se der erro, tenta a última versão.
+
