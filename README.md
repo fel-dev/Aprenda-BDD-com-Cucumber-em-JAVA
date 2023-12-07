@@ -73,7 +73,7 @@ fonte https://www.udemy.com/course/cucumber-java/learn/lecture/9923368#overview
 4. Copiar o código xml do JUnit e colar no `pom.xml` dentro da tag `<dependencies>`
     - mas dentro de um novo container `<dependency>` (os nomes são parecidos, cuidar para não confundir)
     - no final, usando o Eclipse, dá um `Ctrl + Shift + F` para formatar o código e não esquece de salvar o arquivo
-
+    - as dependencias, vão para "Maven Dependencies" dentro do projeto no Eclipse (PS ele pode puxar mais dependencias, mas não precisa se preocupar com isso)
 ```xml
 <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
 <dependency>
@@ -85,4 +85,26 @@ fonte https://www.udemy.com/course/cucumber-java/learn/lecture/9923368#overview
 </dependency>
 ```
 **NOTA** Na vídeo aula, o professor usou a versão 1.2.5. Mas já vi que costuma dar erro na hora de executar o teste com essas configuração dele pois é meio legado... Em regra geral, tenta o 1.2.5 primeiro, se der erro, tenta a última versão.
+
+## Runner do JUnit
+
+Vou criar um `Runner` para o JUnit e a partir de então minhas execuções vai se dar a partir dele.
+
+No mesmo diretório onde está as `Classes` com os `passos` e nossa `Espcificação` (arquivo `.feature`), vou pedir para o Eclipse criar uma nova `Classe`:
+
+1. (default package) > Clica com BDM > New > Class
+2. Nome: `Runner` > Finish
+
+E tudo que vou fazer nela definir novos runners com o cucumber
+
+```java
+import org.junit.runner.RunWith;
+
+import cucumber.api.junit.Cucumber; // <-- repare que o import é do cucumber.junit
+
+@RunWith(Cucumber.class)
+public class Runner {
+
+}
+```
 
