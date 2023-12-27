@@ -1,14 +1,14 @@
-# language: en
+# language: pt
 # encoding: UTF-8
 
 @tag
-Feature: Aprender Cucumber
+Funcionalidade: Aprender Cucumber
 	Como um aluno
 	Eu quero aprender a utilizar Cucumber
 	Para que eu possa automatizar criterios de aceitacao
 	
 	@tag1
-	Scenario: Deve executar especificacao
-		Given que crei o arquivo corretamente
-		When executa-lo
-		Then a especificacao deve finalizar com sucesso
+	Cenário: Deve executar especificacao
+		Dado que crei o arquivo corretamente
+		Quando executa-lo
+		Então a especificacao deve finalizar com sucesso
