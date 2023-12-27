@@ -23,5 +23,14 @@
 			<artifactId>cucumber-java</artifactId>
 			<version>7.15.0</version>
 		</dependency>
+
+		<dependency>
+			<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>7.15.0</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 </project>
