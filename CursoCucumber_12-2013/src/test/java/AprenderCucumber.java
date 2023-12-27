@@ -36,10 +36,6 @@ public class AprenderCucumber {
 
 	@Então("o valor do contador será {int}")
 	public void oValorDoContadorSerá(Integer int1) throws Throwable{
-		System.out.println("Incremento é: " + int1);
-	    System.out.println("Contador agora é: " + contador);
-	    System.out.println(int1 == contador);
-//	    Assert.assertTrue(int1 == contador);
 	    Assert.assertEquals(int1, contador);
 	}
 
