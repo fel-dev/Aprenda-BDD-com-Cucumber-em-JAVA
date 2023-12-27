@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -15,21 +15,22 @@
 
 	<dependencies>
 		<dependency>
-			<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java 
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>-->
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>7.15.0</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java 
 		<dependency>
-			<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>7.15.0</version>
-			<scope>test</scope>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-java</artifactId>
+		    <version>1.2.5</version>
+		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+		<dependency>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-junit</artifactId>
+		    <version>1.2.5</version>
+		    <scope>test</scope>
 		</dependency>
 
 	</dependencies>
