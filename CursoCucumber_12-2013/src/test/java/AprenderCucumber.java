@@ -34,7 +34,7 @@ public class AprenderCucumber {
 	@Então("o valor do contador será {int}")
 	public void oValorDoContadorSerá(Integer int1) throws Throwable{
 	    Assert.assertEquals((Integer)int1, (Integer)contador);
-//		new RuntimeException();
+		new RuntimeException();
 	}
 
 }
