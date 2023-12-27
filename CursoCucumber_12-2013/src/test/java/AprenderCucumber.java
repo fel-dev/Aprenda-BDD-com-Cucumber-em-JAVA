@@ -7,7 +7,6 @@ public class AprenderCucumber {
 //	public void que_crei_o_arquivo_corretamente() throws Throwable {
 	@Dado("que crei o arquivo corretamente")
 	public void queCreiOArquivoCorretamente() {
-		System.out.println("---------\nImprimindo\n---------\nQualquer coisa\n--------- ");
 	}
 
 	@Quando("executa-lo")
@@ -16,6 +15,25 @@ public class AprenderCucumber {
 
 	@Então("a especificacao deve finalizar com sucesso")
 	public void aEspecificacaoDeveFinalizarComSucesso() {
+	}
+	
+	private int contador = 0;
+	
+	@Dado("que o valor do contador é {int}")
+	public void queOValorDoContadorÉ(Integer int1) {
+	    contador = int1;
+	}
+
+	@Quando("eu incrementar em {int}")
+	public void euIncrementarEm(Integer int1) {
+	    contador = contador + int1;
+	}
+
+	@Então("o valor do contador será {int}")
+	public void oValorDoContadorSerá(Integer int1) {
+	    System.out.println(int1);
+	    System.out.println(contador);
+	    System.out.println(int1 == contador);
 	}
 
 }
