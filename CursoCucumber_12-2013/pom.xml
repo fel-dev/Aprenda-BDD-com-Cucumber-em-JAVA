@@ -1,55 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>be.ce.wcaquino</groupId>
-	<artifactId>curso-cucumber</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<groupId>br.ce.wcaquino</groupId>
+	<artifactId>CursoCucumber</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-
+	<!-- aquivo do professor -->
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>7.15.0</version>
+			<version>4.8.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>7.15.0</version>
+			<version>4.8.0</version>
+			<scope>test</scope>
 		</dependency>
-
-
-
-
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 		<dependency>
-		    <groupId>info.cukes</groupId>
-		    <artifactId>cucumber-java</artifactId>
-		    <version>1.2.5</version>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.11.0</version>
 		</dependency>
-		
 		<dependency>
-		    <groupId>info.cukes</groupId>
-		    <artifactId>cucumber-junit</artifactId>
-		    <version>1.2.5</version>
-		    <scope>test</scope>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
 		</dependency>
-		
-		
-
 	</dependencies>
 </project>
