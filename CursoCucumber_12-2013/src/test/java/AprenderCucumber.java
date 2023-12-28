@@ -1,5 +1,7 @@
 import java.util.Calendar;
 import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import org.junit.Assert;
 
@@ -7,17 +9,18 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Quando;
 import io.cucumber.java.pt.Então;
 
+
 public class AprenderCucumber {
 
-    @Dado("^que crei o arquivo corretamente$")
-    public void queCreiOArquivoCorretamente() throws Throwable {
+    @Dado("^que criei o arquivo corretamente$")
+    public void queCrieiOArquivoCorretamente() throws Throwable {
     }
 
     @Quando("^executa-lo$")
     public void executaLo() throws Throwable {
     }
 
-    @Então("^a especificacao deve finalizar com sucesso$")
+    @Então("^a especificação deve finalizar com sucesso$")
     public void aEspecificacaoDeveFinalizarComSucesso() throws Throwable {
     }
 
@@ -39,29 +42,45 @@ public class AprenderCucumber {
     }
     
     
-    Date entrega = new Date();
+    private Date entrega = new Date();
+    private Calendar cal = Calendar.getInstance();
+
     
-    @Dado("^que o prazo é dia (\\d+)/(\\d+)/(\\d+)$")
+    @Dado("^que o prazo é dia (\\d+)/(\\d+)/(\\d+)$") // 05/04/2018
     public void queOPrazoÉDia(Integer dia, Integer mes, Integer ano) throws Throwable {
-       Calendar cal = Calendar.getInstance();
-       cal.add(Calendar.DAY_OF_MONTH, dia);
-       cal.add(Calendar.MONTH, mes);
-       cal.add(Calendar.YEAR, ano);
+//       Calendar cal = Calendar.getInstance();
+       
+       System.out.println("\n\nLOG: CAL: " + cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH) + 1 ) + "/"+cal.get(Calendar.YEAR) + "\n\n");
+       
+       cal.set(Calendar.DAY_OF_MONTH, dia);
+       cal.set(Calendar.MONTH, mes - 1);
+       cal.set(Calendar.YEAR, ano);
        entrega = cal.getTime();
+       
+       System.out.println("\n\nLOG: Dia da Esperado da Entrega: " + entrega + "\n\n");
     }
 
-    @Quando("^a entrega atrasar em (\\d+) dias$")
-    public void aEntregaAtrasarEmDias(Integer int1) throws Throwable {
-    	Calendar cal = Calendar.getInstance();
+    @Quando("^a entrega atrasar em (\\d+) dias$") // 2
+    public void aEntregaAtrasarEmDias(Integer diasAtrasado) throws Throwable {
+//    	Calendar cal = Calendar.getInstance();
         cal.setTime(entrega);
-        cal.add(Calendar.DAY_OF_MONTH, (Integer) int1);
+        cal.roll(Calendar.DAY_OF_MONTH, diasAtrasado);
         entrega = cal.getTime();
+        
+        System.out.println("\n\n LOG: Modificado o Dia da Entrega (se atrasar): " + entrega +"\n\n");
     }
 
-    @Então("^a entrega será efetuada em (\\d{2}\\/\\d{2}\\/\\d{4})$")
-    public void aEntregaSeráEfetuadaEm(String data) throws Throwable  {
-        // Write code here that turns the phrase above into concrete actions
-//        throw new cucumber.api.PendingException();
+    @Então("^a entrega será efetuada em (\\d{2}\\/\\d{2}\\/\\d{4})$") // 07/04/2018
+    public void aEntregaSeráEfetuadaEm(String dataEsperada) throws Throwable  {
+        // Transform a Data type in String Type
+    	System.out.println("\nData Esperada: " + dataEsperada);
+    	
+    	DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    	String dataFormatada = formatador.format(entrega);
+    	
+    	System.out.println("Data Formatada: " + dataFormatada + "\n");
+    	
+    	Assert.assertEquals(dataEsperada,dataFormatada);
     }
 
 }

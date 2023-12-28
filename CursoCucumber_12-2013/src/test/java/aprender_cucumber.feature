@@ -4,12 +4,12 @@
 Funcionalidade: Aprender Cucumber
 	Como um aluno
 	Eu quero aprender a utilizar Cucumber
-	Para que eu possa automatizar criterios de aceitacao
+	Para que eu possa automatizar critérios de aceitação
 	
-	Cenário: Deve executar especificacao
-		Dado que crei o arquivo corretamente
+	Cenário: Deve executar especificação
+		Dado que criei o arquivo corretamente
 		Quando executa-lo
-		Então a especificacao deve finalizar com sucesso
+		Então a especificação deve finalizar com sucesso
 		
 	Cenário: Deve incrementar contador
 		Dado que o valor do contador é 15
@@ -21,7 +21,7 @@ Funcionalidade: Aprender Cucumber
 		Quando eu incrementar em 35
 		Então o valor do contador será 158
 		
-	Cenário: Deve calcular atraso no praso de entrega
-		Dado que o prazo é dia 05/04/2018
+	Cenário: Deve calcular atraso no prazo de entrega
+		Dado que o prazo é dia 28/12/2023
 		Quando a entrega atrasar em 2 dias
-		Então a entrega será efetuada em 07/04/2018
+		Então a entrega será efetuada em 30/12/2023
