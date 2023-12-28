@@ -30,3 +30,11 @@ Funcionalidade: Aprender Cucumber
 		Dado que o prazo é dia 05/05/2018
 		Quando a entrega atrasar em 2 mês
 		Então a entrega será efetuada em 05/07/2018
+		
+	Cenário: Deve criar steps genéricos para estes passos
+	    Dado que o ticket é AF345
+	    Dado que o valor da passagem é R$ 230,45
+	    Dado que o nome do passageiro é "Fulano da Silva"
+	    Dado que o telefone do passageiro é 9999-9999
+	    Quando criar os steps
+	    Então o teste vai funcionar
