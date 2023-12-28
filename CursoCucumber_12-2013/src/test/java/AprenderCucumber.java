@@ -108,5 +108,42 @@ public class AprenderCucumber {
     	    	
     	Assert.assertEquals(dataEsperada,dataFormatada);
     }
+    
+    @Dado("que o ticket é (.+)")
+    public void queOTicketÉAF(String ticket) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+    @Dado("que o valor da passagem é R$ {double}")
+    public void queOValorDaPassagemÉR$(Double double1) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+    @Dado("que o nome do passageiro é {string}")
+    public void queONomeDoPassageiroÉ(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+    @Dado("que o telefone do passageiro é {int}{int}")
+    public void queOTelefoneDoPassageiroÉ(Integer int1, Integer int2) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+    @Quando("criar os steps")
+    public void criarOsSteps() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+    @Então("o teste vai funcionar")
+    public void oTesteVaiFuncionar() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
 
 }
