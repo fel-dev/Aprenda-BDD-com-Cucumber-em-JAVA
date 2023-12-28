@@ -43,43 +43,69 @@ public class AprenderCucumber {
     
     
     private Date entrega = new Date();
-    private Calendar cal = Calendar.getInstance();
+    private Calendar cal = Calendar.getInstance(); 
 
     
     @Dado("^que o prazo é dia (\\d+)/(\\d+)/(\\d+)$") // 05/04/2018
     public void queOPrazoÉDia(Integer dia, Integer mes, Integer ano) throws Throwable {
 //       Calendar cal = Calendar.getInstance();
-       
-       System.out.println("\n\nLOG: CAL: " + cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH) + 1 ) + "/"+cal.get(Calendar.YEAR) + "\n\n");
-       
+             
        cal.set(Calendar.DAY_OF_MONTH, dia);
        cal.set(Calendar.MONTH, mes - 1);
        cal.set(Calendar.YEAR, ano);
        entrega = cal.getTime();
        
-       System.out.println("\n\nLOG: Dia da Esperado da Entrega: " + entrega + "\n\n");
     }
 
-    @Quando("^a entrega atrasar em (\\d+) dias$") // 2
-    public void aEntregaAtrasarEmDias(Integer diasAtrasado) throws Throwable {
+    @Quando("^a entrega atrasar em (\\d+) (dia|dias|mês|mes|meses)$") // 2 dias
+    public void aEntregaAtrasarEmDias(Integer tempoEmAtrasado, String unidadeDeTempo) throws Throwable {
 //    	Calendar cal = Calendar.getInstance();
         cal.setTime(entrega);
-        cal.roll(Calendar.DAY_OF_MONTH, diasAtrasado);
+        
+        if (unidadeDeTempo.equals("dia") || unidadeDeTempo.equals("dias")) {
+        	cal.roll(Calendar.DAY_OF_MONTH, tempoEmAtrasado);
+    	}
+        
+	        else if (unidadeDeTempo.equals("mes") || unidadeDeTempo.equals("meses") || unidadeDeTempo.equals("mês")) {
+	    		cal.roll(Calendar.MONTH, tempoEmAtrasado);
+	    	} 
+        
+		        else {
+		    		System.out.println("\n\n+----------- --- -- -   -");
+		    		System.out.println("|Error: Verify the unit of time. Accepted \"dias\" or \"meses\".");
+		    		System.out.println("|A Unidade de tempo informada: \"" + unidadeDeTempo + "\"");
+		    		System.out.println("+----------- --- -- -   -\n\n");
+		    		throw new cucumber.api.PendingException();
+		    	};
+        
+        
+        
+//        switch (unidadeDeTempo) {
+//		case "dias":
+//			cal.roll(Calendar.DAY_OF_MONTH, tempoEmAtrasado);
+//			break;
+//			
+//		case "meses":
+//			cal.roll(Calendar.MONTH, tempoEmAtrasado);
+//			break;
+//
+//		default:
+//			System.out.println("Error: Verify time of past. Only accept \"dias\" or \"meses\".");
+////    		throw new cucumber.api.PendingException();
+//			break;
+//        }        	
+        
+        
         entrega = cal.getTime();
         
-        System.out.println("\n\n LOG: Modificado o Dia da Entrega (se atrasar): " + entrega +"\n\n");
     }
 
     @Então("^a entrega será efetuada em (\\d{2}\\/\\d{2}\\/\\d{4})$") // 07/04/2018
     public void aEntregaSeráEfetuadaEm(String dataEsperada) throws Throwable  {
-        // Transform a Data type in String Type
-    	System.out.println("\nData Esperada: " + dataEsperada);
     	
     	DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
     	String dataFormatada = formatador.format(entrega);
-    	
-    	System.out.println("Data Formatada: " + dataFormatada + "\n");
-    	
+    	    	
     	Assert.assertEquals(dataEsperada,dataFormatada);
     }
 

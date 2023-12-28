@@ -28,5 +28,5 @@ Funcionalidade: Aprender Cucumber
 
 	Cenário: Deve calcular atraso no prazo de entrega da China
 		Dado que o prazo é dia 05/05/2018
-		Quando a entrega atrasar em 2 meses
-		Então a entrega será efetuada em 05/06/2018
+		Quando a entrega atrasar em 2 mês
+		Então a entrega será efetuada em 05/07/2018
