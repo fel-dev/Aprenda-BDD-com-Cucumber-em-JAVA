@@ -97,13 +97,13 @@ public class AprenderCucumber {
 //        throw new cucumber.api.PendingException();
     }
 
-    @Dado("^que o valor da passagem é R$ (\\d{3}(\\,\\d{2}))$")
-    public void queOValorDaPassagemÉR$(Double valorPassagem) {
+    @Dado("^que o valor da passagem é R\\$ (\\d+),(\\d+)$")
+    public void queOValorDaPassagemÉR$(Integer int1, Integer int2) {
         // Write code here that turns the phrase above into concrete actions
 //        throw new cucumber.api.PendingException();
     }
 
-    @Dado("que o nome do passageiro é {string}")
+    @Dado("que o nome do passageiro é \"(.*)\"$")
     public void queONomeDoPassageiroÉ(String string) {
         // Write code here that turns the phrase above into concrete actions
 //        throw new cucumber.api.PendingException();
@@ -115,13 +115,13 @@ public class AprenderCucumber {
 //        throw new cucumber.api.PendingException();
     }
 
-    @Quando("^criar os steps$")
+    @Quando("criar os steps")
     public void criarOsSteps() {
         // Write code here that turns the phrase above into concrete actions
 //        throw new cucumber.api.PendingException();
     }
 
-    @Então("^o teste vai funcionar$")
+    @Então("o teste vai funcionar")
     public void oTesteVaiFuncionar() {
         // Write code here that turns the phrase above into concrete actions
 //        throw new cucumber.api.PendingException();
