@@ -77,25 +77,7 @@ public class AprenderCucumber {
 		    		System.out.println("+----------- --- -- -   -\n\n");
 		    		throw new cucumber.api.PendingException();
 		    	};
-        
-        
-        
-//        switch (unidadeDeTempo) {
-//		case "dias":
-//			cal.roll(Calendar.DAY_OF_MONTH, tempoEmAtrasado);
-//			break;
-//			
-//		case "meses":
-//			cal.roll(Calendar.MONTH, tempoEmAtrasado);
-//			break;
-//
-//		default:
-//			System.out.println("Error: Verify time of past. Only accept \"dias\" or \"meses\".");
-////    		throw new cucumber.api.PendingException();
-//			break;
-//        }        	
-        
-        
+
         entrega = cal.getTime();
         
     }
@@ -109,40 +91,40 @@ public class AprenderCucumber {
     	Assert.assertEquals(dataEsperada,dataFormatada);
     }
     
-    @Dado("que o ticket é (.+)")
+    @Dado("^que o ticket é (\\b[A-Z]{2}\\d{3,4}\\b)$")
     public void queOTicketÉAF(String ticket) {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+//        throw new cucumber.api.PendingException();
     }
 
-    @Dado("que o valor da passagem é R$ {double}")
-    public void queOValorDaPassagemÉR$(Double double1) {
+    @Dado("^que o valor da passagem é R$ (\\d{3}(\\,\\d{2}))$")
+    public void queOValorDaPassagemÉR$(Double valorPassagem) {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+//        throw new cucumber.api.PendingException();
     }
 
     @Dado("que o nome do passageiro é {string}")
     public void queONomeDoPassageiroÉ(String string) {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+//        throw new cucumber.api.PendingException();
     }
 
     @Dado("que o telefone do passageiro é {int}{int}")
     public void queOTelefoneDoPassageiroÉ(Integer int1, Integer int2) {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+//        throw new cucumber.api.PendingException();
     }
 
-    @Quando("criar os steps")
+    @Quando("^criar os steps$")
     public void criarOsSteps() {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+//        throw new cucumber.api.PendingException();
     }
 
-    @Então("o teste vai funcionar")
+    @Então("^o teste vai funcionar$")
     public void oTesteVaiFuncionar() {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+//        throw new cucumber.api.PendingException();
     }
 
 
