@@ -91,8 +91,8 @@ public class AprenderCucumber {
     	Assert.assertEquals(dataEsperada,dataFormatada);
     }
     
-    @Dado("^que o ticket é (\\b[A-Z]{2}\\d{3,4}\\b)$")
-    public void queOTicketÉAF(String ticket) {
+    @Dado("^que o ticket( especial)? é (\\b[A-Z]{2}\\d{3,4}\\b)$")
+    public void queOTicketÉAF(String tipo, String ticket) {
         // Write code here that turns the phrase above into concrete actions
 //        throw new cucumber.api.PendingException();
     }
@@ -109,7 +109,7 @@ public class AprenderCucumber {
 //        throw new cucumber.api.PendingException();
     }
 
-    @Dado("que o telefone do passageiro é {int}{int}")
+    @Dado("que o telefone do passageiro é {int}-{int}")
     public void queOTelefoneDoPassageiroÉ(Integer int1, Integer int2) {
         // Write code here that turns the phrase above into concrete actions
 //        throw new cucumber.api.PendingException();
